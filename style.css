@@ -1,0 +1,184 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: arial;
+
+}
+
+body{
+    background-image: url(images/pastrybg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#logo-nav-div{
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 10px;
+   
+}
+
+#logo-div{
+    width: 50%;
+    min-height: 70px;
+    background-color: grey;
+    float: left;
+    line-height: 50px;
+    padding-left:2%;
+}
+
+#nav-div{
+    width: 50%;
+    min-height: 70px;
+    background-color: grey;
+    float: right;
+    line-height: 50px;
+}
+
+.clearfix::after{
+    content:"";
+    display:block;
+    clear: both;
+}
+
+#main-div{
+    width: 100%;
+    min-height: 400px;
+    margin-bottom: 10px;
+}
+
+#main-div .box{
+    width: 30%;
+    min-height: 400px;
+    background-color: lightgray;
+    float: left;
+    text-align: center;
+    line-height: 400px;
+}
+
+#main-div .box:nth-child(2){
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#main-div .image-container{
+    width: 30%; /* Adjust as needed */
+    min-height: 400px;
+    margin-bottom: 20px; /* Adjust spacing */
+    background-color: lightgray;
+    float: left;
+    margin-left: 12%;
+    margin-right: 4%;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    background-color: grey;
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: left;
+}
+
+.logo img {
+    width: 50px; /* Adjust logo size */
+    height: auto;
+    margin-right: 20px; /* Add space between logo and info */
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+.info {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.name {
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.email {
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    margin-top: 0;
+}
+
+#wrapper-div{
+    width: 100%;
+    margin: auto;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    padding-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 20px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #575757;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 30px;
+    color: white;
+    background: #333;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 2;
+    transition: left 0.3s ease;
+}
+
+input[type="checkbox"]:checked ~ .sidebar {
+    transform: translateX(0);
+}
+
+input[type="checkbox"]:checked ~ .toggle-btn {
+    left: 0px;
+}
