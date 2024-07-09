@@ -1,54 +1,68 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: arial;
-
+    font-family: Arial, sans-serif;
 }
 
-body{
+html, body {
     background-image: url(images/pastrybg.jpg);
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-#logo-nav-div{
+.content {      
+    flex: 1;
+    margin-bottom: -50px;
+    margin-top: 100px;
+}
+
+
+
+#logo-nav-div {
     width: 100%;
     min-height: 50px;
     margin-bottom: 10px;
-   
+    position: fixed;
 }
 
-#logo-div{
+#logo-div, #nav-div {
     width: 50%;
     min-height: 70px;
     background-color: grey;
+    line-height: 50px;
     float: left;
-    line-height: 50px;
-    padding-left:2%;
 }
 
-#nav-div{
-    width: 50%;
-    min-height: 70px;
-    background-color: grey;
+#nav-div {
     float: right;
-    line-height: 50px;
 }
 
-.clearfix::after{
-    content:"";
-    display:block;
+.clearfix::after {
+    content: "";
+    display: block;
     clear: both;
 }
 
-#main-div{
+#main-div {
     width: 100%;
     min-height: 400px;
-    margin-bottom: 10px;
+    padding-top: 55px;
 }
 
-#main-div .box{
+#main-div1 {
+    width: 100%;
+    min-height: 400px;
+    padding-top: 60px;
+}
+
+#main-div1 .box {
     width: 30%;
     min-height: 400px;
     background-color: lightgray;
@@ -57,15 +71,15 @@ body{
     line-height: 400px;
 }
 
-#main-div .box:nth-child(2){
+#main-div1 .box:nth-child(2) {
     margin-left: 5%;
     margin-right: 5%;
 }
 
-#main-div .image-container{
-    width: 30%; /* Adjust as needed */
+#main-div1 .image-container {
+    width: 30%;
     min-height: 400px;
-    margin-bottom: 20px; /* Adjust spacing */
+    margin-bottom: 20px;
     background-color: lightgray;
     float: left;
     margin-left: 12%;
@@ -83,18 +97,85 @@ body{
     color: #555;
 }
 
+.about-section, .contact-section {
+    padding: 20px;
+    background: lightgrey;
+    border-radius: 8px;
+    border-style: ridge;
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.about-section h1, .contact-section h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.5;
+}
+
+header, nav, main, footer {
+    padding: 1em;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 22%;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+}
+
+.menu-img {
+    width: 100%;
+    height: auto;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#nav-div a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+
+
+
 footer {
     background-color: grey;
     min-height: 80px;
     width: 100%;
     display: flex;
     align-items: left;
+    margin-top: auto;
 }
 
 .logo img {
-    width: 50px; /* Adjust logo size */
+    width: 50px;
     height: auto;
-    margin-right: 20px; /* Add space between logo and info */
+    margin-right: 20px;
     margin-top: 15px;
     margin-left: 40px;
 }
@@ -118,9 +199,12 @@ footer {
     margin-top: 0;
 }
 
-#wrapper-div{
+#wrapper-div {
     width: 100%;
     margin: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 input[type="checkbox"] {
@@ -131,6 +215,7 @@ input[type="checkbox"] {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 250px;
     height: 100%;
     background: #333;
@@ -163,7 +248,7 @@ input[type="checkbox"] {
 }
 
 .toggle-btn {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0px;
     font-size: 30px;
@@ -173,6 +258,35 @@ input[type="checkbox"] {
     cursor: pointer;
     z-index: 2;
     transition: left 0.3s ease;
+}
+
+.category-nav {
+    position: sticky;
+    top: 70px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.category-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.category-link.active {
+    background-color: #28a745;
+    color: white;
+}
+
+.category-section {
+    margin-bottom: 40px;
 }
 
 input[type="checkbox"]:checked ~ .sidebar {
